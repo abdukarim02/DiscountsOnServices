@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fonts/Gotham Pro">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="overlay" id="popup2">
+        <div class="payment-modal">
+            <div class="application__body-info">
+                <h3 class="application__info-title">Subscription Application</h3>
+                <a href="#" class="application__info-btn">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.00072 5.58599L11.9507 0.635986L13.3647 2.04999L8.41472 6.99999L13.3647 11.95L11.9507 13.364L7.00072 8.41399L2.05072 13.364L0.636719 11.95L5.58672 6.99999L0.636719 2.04999L2.05072 0.635986L7.00072 5.58599Z" fill="#3A3A3C" />
+                    </svg>
+                </a>
+            </div>
+          <div class="payment-options">
+            <button class="payment-option apple-pay"> Pay</button>
+            <button class="payment-option google-pay">G Pay</button>
+          </div>
+          
+          <form id="cardPaymentForm">
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input type="text" id="cardNumber" placeholder="1234 1234 1234 1234" maxlength="19" required>
+            </div>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="expirationDate">Expiration Date</label>
+                <input type="text" id="expirationDate" placeholder="MM/YY" maxlength="5" required>
+              </div>
+              <div class="form-group">
+                <label for="cvc">CVC</label>
+                <input type="text" id="cvc" placeholder="CVC" maxlength="3" required>
+              </div>
+            </div>
+            <button type="submit" class="btn-pay">Pay with card</button>
+            <p class="secure-note">We do not collect information on your card. Everything is safe.</p>
+          </form>
+    
+          <div class="crypto-payment">
+            <h3>Payment by crypto wallet</h3>
+            <label for="cryptoCurrency">Select currency</label>
+            <select id="cryptoCurrency">
+              <option value="bitcoin">Bitcoin</option>
+              <option value="ethereum">Ethereum</option>
+              <option value="litecoin">Litecoin</option>
+            </select>
+            <button class="btn-pay">Pay</button>
+          </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header__content container">
+            <a href="./index.html" class="header__content-logo">
+                <img src="images/logo.svg" alt="" class="header__logo-img">
+                <span class="header__logo-text">DiscountsOnServices</span>
+            </a>
+            <ul class="header__content-menu">
+                <li class="header__menu-item">
+                    <a href="#" class="header__item-link">Subscriptions 
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_188_261)">
+                              <path d="M5.99987 6.58633L8.47487 4.11133L9.18187 4.81833L5.99987 8.00033L2.81787 4.81833L3.52487 4.11133L5.99987 6.58633Z" fill="#333333" />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_188_261">
+                                <rect width="12" height="12" fill="white" />
+                              </clipPath>
+                            </defs>
+                        </svg>
+                        <ul class="header__link-list" >
+                            <li class="header__list-item"><a href="./netflix.html" class="header__item-link">Netflix</a></li>
+                            <li class="header__list-item"><a href="./netflix.html" class="header__item-link">YouTube Premium</a></li>
+                            <li class="header__list-item"><a href="./netflix.html" class="header__item-link">Spotify</a></li>
+                        </ul>
+                    </a>
+                </li>
+                <li class="header__menu-item"><a href="./faq.html" class="header__item-link">FAQ</a></li>
+                <li class="header__menu-item"><a href="./index.html" class="header__item-link">Support</a></li>
+                <li class="header__menu-item"><a href="./index.html" class="header__item-link">About</a></li>
+            </ul>
+            <div class="header__content-navigation">
+                <div class="header__navigation-social">
+                    <a href="#" class="header__social-link">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.00401338 20L1.35601 15.032C0.465151 13.5049 -0.00289063 11.768 1.34322e-05 10C1.34322e-05 4.477 4.47701 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20C8.23279 20.0029 6.49667 19.5352 4.97001 18.645L0.00401338 20ZM6.39101 5.308C6.26188 5.31602 6.13569 5.35003 6.02001 5.408C5.91153 5.46943 5.81251 5.54622 5.72601 5.636C5.60601 5.749 5.53801 5.847 5.46501 5.942C5.09542 6.423 4.89662 7.01342 4.90001 7.62C4.90201 8.11 5.03001 8.587 5.23001 9.033C5.63901 9.935 6.31201 10.89 7.20101 11.775C7.41501 11.988 7.62401 12.202 7.84901 12.401C8.9524 13.3725 10.2673 14.073 11.689 14.447L12.258 14.534C12.443 14.544 12.628 14.53 12.814 14.521C13.1053 14.506 13.3896 14.4271 13.647 14.29C13.813 14.202 13.891 14.158 14.03 14.07C14.03 14.07 14.073 14.042 14.155 13.98C14.29 13.88 14.373 13.809 14.485 13.692C14.568 13.606 14.64 13.505 14.695 13.39C14.773 13.227 14.851 12.916 14.883 12.657C14.907 12.459 14.9 12.351 14.897 12.284C14.893 12.177 14.804 12.066 14.707 12.019L14.125 11.758C14.125 11.758 13.255 11.379 12.724 11.137C12.668 11.1126 12.608 11.0987 12.547 11.096C12.4786 11.089 12.4095 11.0967 12.3443 11.1186C12.2791 11.1405 12.2193 11.1761 12.169 11.223V11.221C12.164 11.221 12.097 11.278 11.374 12.154C11.3325 12.2098 11.2754 12.2519 11.2098 12.2751C11.1443 12.2982 11.0733 12.3013 11.006 12.284C10.9409 12.2666 10.877 12.2445 10.815 12.218C10.691 12.166 10.648 12.146 10.563 12.109L10.558 12.107C9.98592 11.8572 9.45624 11.5198 8.98801 11.107C8.86201 10.997 8.74501 10.877 8.62501 10.761C8.23159 10.3842 7.88873 9.95801 7.60501 9.493L7.54601 9.398C7.50364 9.33416 7.46937 9.2653 7.44401 9.193C7.40601 9.046 7.50501 8.928 7.50501 8.928C7.50501 8.928 7.74801 8.662 7.86101 8.518C7.9551 8.39832 8.04289 8.27382 8.12401 8.145C8.24201 7.955 8.27901 7.76 8.21701 7.609C7.93701 6.925 7.64701 6.244 7.34901 5.568C7.29001 5.434 7.11501 5.338 6.95601 5.319C6.90201 5.313 6.84801 5.307 6.79401 5.303C6.65972 5.29633 6.52515 5.29766 6.39101 5.307V5.308Z" fill="#333333" />
+                        </svg>
+                    </a>
+                    <a href="#" class="header__social-link">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM6.89 11.17L6.903 11.163L7.773 14.033C7.885 14.344 8.039 14.4 8.226 14.374C8.414 14.349 8.513 14.248 8.636 14.13L9.824 12.982L12.374 14.87C12.84 15.127 13.175 14.994 13.291 14.438L14.948 6.616C15.131 5.888 14.811 5.596 14.246 5.828L4.513 9.588C3.849 9.854 3.853 10.226 4.393 10.391L6.89 11.171V11.17Z" fill="#333333" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <ul class="header__navigation-translate">
+                <li class="header__translate-item">
+                    <a href="#" class="header__item-link">EN
+                        <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.99987 2.58633L6.47487 0.111328L7.18187 0.818328L3.99987 4.00033L0.817871 0.818328L1.52487 0.111328L3.99987 2.58633Z" fill="#333333" />
+                        </svg>
+                        <ul class="header__link-list">
+                            <li class="header__list-item"><a href="#" class="header__item-link">English</a></li>
+                            <li class="header__list-item"><a href="#" class="header__item-link">Ukraine</a></li>
+                            <li class="header__list-item"><a href="#" class="header__item-link">Russian</a></li>
+                        </ul>
+                    </a>
+                </li>
+            </ul>
+            <a href="#popup2" class="header__navigation-btn">Log in</a>
+        </div>
+        <div class="header__mobile container">
+            <a href="#" class="header__content-logo">
+                <img src="images/logo.svg" alt="" class="header__logo-img">
+                <span class="header__logo-text">DiscountsOnServices</span>
+            </a>
+            <div class="header__mobile-button">
+                <div class="header__button-burger">
+                    <div class="header__burger-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="header__burger-item">
+                        <ul class="header__item-menufirst">
+                            <li class="header__menufirst-list">
+                                <a href="#" class="header__list-link">
+                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.2727 17.0839C17.2727 17.3269 17.177 17.5599 17.0065 17.7317C16.836 17.9035 16.6047 18 16.3636 18H3.63636C3.39526 18 3.16403 17.9035 2.99354 17.7317C2.82305 17.5599 2.72727 17.3269 2.72727 17.0839V8.83893H0L9.38818 0.238515C9.55556 0.0850471 9.77371 0 10 0C10.2263 0 10.4444 0.0850471 10.6118 0.238515L20 8.83893H17.2727V17.0839ZM7.27273 7.92282V13.4195H12.7273V7.92282H7.27273ZM9.09091 9.75504H10.9091V11.5873H9.09091V9.75504Z" fill="#4E33FF" />
+                                    </svg>
+                                    Home
+                                </a>
+                            </li>
+                            <li class="header__menufirst-list">
+                                <a href="#" class="header__list-link">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 8.88889H7.11111V0H0V8.88889ZM0 16H7.11111V10.6667H0V16ZM8.88889 16H16V7.11111H8.88889V16ZM8.88889 0V5.33333H16V0H8.88889Z" fill="#9C99AD" />
+                                    </svg>
+                                    About
+                                </a>
+                            </li>
+                            <li class="header__menufirst-list">
+                                <a href="#" class="header__list-link">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9 13V15H11V13H9ZM11 11.355C11.8037 11.1128 12.4936 10.59 12.9442 9.88174C13.3947 9.17353 13.5759 8.32705 13.4547 7.49647C13.3336 6.66588 12.9181 5.90644 12.284 5.35646C11.6499 4.80647 10.8394 4.50254 10 4.5C9.19085 4.49994 8.40666 4.78015 7.78079 5.29299C7.15492 5.80583 6.72601 6.51963 6.567 7.313L8.529 7.706C8.58468 7.42743 8.71832 7.1704 8.91437 6.96482C9.11042 6.75923 9.36081 6.61354 9.63643 6.54471C9.91204 6.47587 10.2015 6.48671 10.4712 6.57597C10.7409 6.66523 10.9797 6.82924 11.1598 7.04891C11.34 7.26858 11.454 7.53489 11.4887 7.81684C11.5234 8.0988 11.4773 8.3848 11.3558 8.64158C11.2343 8.89837 11.0423 9.11536 10.8023 9.26733C10.5623 9.4193 10.2841 9.49998 10 9.5C9.73478 9.5 9.48043 9.60536 9.29289 9.79289C9.10536 9.98043 9 10.2348 9 10.5V12H11V11.355Z" fill="#9C99AD" />
+                                    </svg>
+                                    FAQ
+                                </a>
+                            </li>
+                            <li class="header__menufirst-list">
+                                <a href="#" class="header__list-link">
+                                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 20H1C0.734784 20 0.48043 19.8946 0.292893 19.7071C0.105357 19.5196 0 19.2652 0 19V6H18V19C18 19.2652 17.8946 19.5196 17.7071 19.7071C17.5196 19.8946 17.2652 20 17 20ZM18 4H0V1C0 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0H17C17.2652 0 17.5196 0.105357 17.7071 0.292893C17.8946 0.48043 18 0.734784 18 1V4ZM4 9V13H8V9H4ZM4 15V17H14V15H4ZM10 10V12H14V10H10Z" fill="#9C99AD" />
+                                    </svg>
+                                    Support
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="header__item-menusecond">
+                            <ul class="header__menusecond-list">
+                                <li class="header__menufirst-list">
+                                    <a href="#" class="header__list-link">Netflix</a>
+                                </li>
+                                <li class="header__menufirst-list">
+                                    <a href="#" class="header__list-link">YouTube</a>
+                                </li>
+                                <li class="header__menufirst-list">
+                                    <a href="#" class="header__list-link">Spotify</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header__item-btn">
+                            <a href="" class="header__btn-login btn">Login</a>
+                            <a href="" class="header__btn-sign btn">Sign up</a>
+                        </div>
+                        <div class="header__item-navigation">
+                            <div class="header__navigation-translet">
+                                <div class="header__navigation-social">
+                                    <a href="#" class="header__social-link">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.672099 27.333L2.47477 20.709C1.28695 18.6729 0.662894 16.357 0.666766 13.9997C0.666766 6.63572 6.6361 0.666382 14.0001 0.666382C21.3641 0.666382 27.3334 6.63572 27.3334 13.9997C27.3334 21.3637 21.3641 27.333 14.0001 27.333C11.6438 27.3368 9.32897 26.7133 7.29343 25.5264L0.672099 27.333ZM9.1881 7.74371C9.01591 7.75441 8.84766 7.79976 8.69343 7.87705C8.54879 7.95895 8.41676 8.06135 8.30143 8.18105C8.14143 8.33172 8.05077 8.46238 7.95343 8.58905C7.46065 9.23038 7.19558 10.0176 7.2001 10.8264C7.20277 11.4797 7.37343 12.1157 7.6401 12.7104C8.18543 13.913 9.08277 15.1864 10.2681 16.3664C10.5534 16.6504 10.8321 16.9357 11.1321 17.201C12.6033 18.4963 14.3564 19.4304 16.2521 19.929L17.0108 20.045C17.2574 20.0584 17.5041 20.0397 17.7521 20.0277C18.1404 20.0077 18.5196 19.9025 18.8628 19.7197C19.0841 19.6024 19.1881 19.5437 19.3734 19.4264C19.3734 19.4264 19.4308 19.389 19.5401 19.3064C19.7201 19.173 19.8308 19.0784 19.9801 18.9224C20.0908 18.8077 20.1868 18.673 20.2601 18.5197C20.3641 18.3024 20.4681 17.8877 20.5108 17.5424C20.5428 17.2784 20.5334 17.1344 20.5294 17.045C20.5241 16.9024 20.4054 16.7544 20.2761 16.6917L19.5001 16.3437C19.5001 16.3437 18.3401 15.8384 17.6321 15.5157C17.5574 15.4832 17.4775 15.4646 17.3961 15.461C17.3049 15.4517 17.2127 15.4619 17.1258 15.4911C17.0388 15.5204 16.9592 15.5678 16.8921 15.6304V15.6277C16.8854 15.6277 16.7961 15.7037 15.8321 16.8717C15.7768 16.9461 15.7006 17.0023 15.6132 17.0331C15.5258 17.064 15.4312 17.0681 15.3414 17.045C15.2546 17.0218 15.1694 16.9924 15.0868 16.957C14.9214 16.8877 14.8641 16.861 14.7508 16.8117L14.7441 16.809C13.9813 16.476 13.2751 16.0262 12.6508 15.4757C12.4828 15.329 12.3268 15.169 12.1668 15.0144C11.6422 14.512 11.1851 13.9437 10.8068 13.3237L10.7281 13.197C10.6716 13.1119 10.6259 13.0201 10.5921 12.9237C10.5414 12.7277 10.6734 12.5704 10.6734 12.5704C10.6734 12.5704 10.9974 12.2157 11.1481 12.0237C11.2736 11.8641 11.3906 11.6981 11.4988 11.5264C11.6561 11.273 11.7054 11.013 11.6228 10.8117C11.2494 9.89971 10.8628 8.99171 10.4654 8.09038C10.3868 7.91171 10.1534 7.78371 9.94143 7.75838C9.86943 7.75038 9.79743 7.74238 9.72543 7.73705C9.54637 7.72815 9.36694 7.72993 9.1881 7.74238V7.74371Z" fill="#333333" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="header__social-link">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.0001 27.333C6.63608 27.333 0.666748 21.3637 0.666748 13.9997C0.666748 6.63572 6.63608 0.666382 14.0001 0.666382C21.3641 0.666382 27.3334 6.63572 27.3334 13.9997C27.3334 21.3637 21.3641 27.333 14.0001 27.333ZM9.85341 15.5597L9.87075 15.5504L11.0307 19.377C11.1801 19.7917 11.3854 19.8664 11.6347 19.8317C11.8854 19.7984 12.0174 19.6637 12.1814 19.5064L13.7654 17.9757L17.1654 20.493C17.7867 20.8357 18.2334 20.6584 18.3881 19.917L20.5974 9.48771C20.8414 8.51705 20.4147 8.12771 19.6614 8.43705L6.68408 13.4504C5.79875 13.805 5.80408 14.301 6.52408 14.521L9.85341 15.561V15.5597Z" fill="#333333" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <li class="header__translet-list">
+                                    <a href="#" class="header__list-link">EN</a>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    <section class="wrapper">
+        <div class="container">
+            <section class="tabs">
+                <div class="tabs__info">
+                    <h1 class="tabs__info-title title">Choose a Netflix Plan</h1>
+                    <p class="tabs__info-text text">Listen without limits at a bargain price</p>
+                </div>
+                <div class="tabs__btn">
+                    <button class="tabs__btn-item tabs__btn-item--active" data-button="content-1">6 months </button>
+                    <button class="tabs__btn-item" data-button="content-2">12 months </button>
+                </div>
+                <div class="tabs__content">
+                    <div class="tabs__content-item tabs__content-item--active" id="content-1">
+                        <div class="tabs__item-card">
+                            <h2 class="tabs__card-title">Basic</h2>
+                            <div class="tabs__card-services">
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                            </div>
+                            <p class="tabs__card-price"><span>$</span> 45</p>
+                            <a href="#" class="tabs__card-btn">Get started</a>
+                        </div>
+                        <div class="tabs__item-card">
+                            <h2 class="tabs__card-title">Basic</h2>
+                            <div class="tabs__card-services">
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                            </div>
+                            <p class="tabs__card-price"><span>$</span> 60</p>
+                            <a href="#" class="tabs__card-btn">Get started</a>
+                        </div>
+                        <div class="tabs__item-card">
+                            <h2 class="tabs__card-title">Basic</h2>
+                            <div class="tabs__card-services">
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                            </div>
+                            <p class="tabs__card-price"><span>$</span> 80</p>
+                            <a href="#" class="tabs__card-btn">Get started</a>
+                        </div>
+                    </div>
+                    <div class="tabs__content-item" id="content-2">
+                        <div class="tabs__item-card">
+                            <h2 class="tabs__card-title">Basic</h2>
+                            <div class="tabs__card-services">
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                            </div>
+                            <p class="tabs__card-price"><span>$</span> 45</p>
+                            <a href="#" class="tabs__card-btn">Get started</a>
+                        </div>
+                        <div class="tabs__item-card">
+                            <h2 class="tabs__card-title">Basic</h2>
+                            <div class="tabs__card-services">
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                                <div class="tabs__services-column">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.9998 27.3333C6.63584 27.3333 0.666504 21.364 0.666504 14C0.666504 6.63596 6.63584 0.666626 13.9998 0.666626C21.3638 0.666626 27.3332 6.63596 27.3332 14C27.3332 21.364 21.3638 27.3333 13.9998 27.3333ZM12.6705 19.3333L22.0972 9.90529L20.2118 8.01996L12.6705 15.5626L8.8985 11.7906L7.01317 13.676L12.6705 19.3333Z" fill="#5C5C5C" />
+                                    </svg>
+                                    <p class="tabs__column-text">Ad-free music listening</p>
+                                </div>
+                            </div>
+                            <p class="tabs__card-price"><span>$</span> 60</p>
+                            <a href="#" class="tabs__card-btn">Get started</a>
+                        </div>                        
+                    </div>
+                </div>
+            </section>
+            <div class="works__content-friends faq-netflix">
+                <div class="works__friends-info">
+                    <h2 class="works__info-name">Invite friends</h2>
+                    <p class="works__info-text">Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with a secure payment from PAYPAL</p>
+                </div>
+                <div class="works__friends-list">
+                    <p class="works__list-title">Click on the link</p>
+                    <a href="https://t.me/DiscountsOnServices_bot?start=343964809" class="works__list-link">Discounts On Services
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_188_132)">
+                              <path d="M7 6V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H20C20.2652 2 20.5196 2.10536 20.7071 2.29289C20.8946 2.48043 21 2.73478 21 3V17C21 17.2652 20.8946 17.5196 20.7071 17.7071C20.5196 17.8946 20.2652 18 20 18H17V21C17 21.552 16.55 22 15.993 22H4.007C3.87513 22.0008 3.7444 21.9755 3.62232 21.9256C3.50025 21.8757 3.38923 21.8022 3.29566 21.7093C3.20208 21.6164 3.12779 21.5059 3.07705 21.3841C3.02632 21.2624 3.00013 21.1319 3 21L3.003 7C3.003 6.448 3.453 6 4.01 6H7ZM5.003 8L5 20H15V8H5.003ZM9 6H17V16H19V4H9V6Z" fill="#171717" />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_188_132">
+                                <rect width="24" height="24" fill="white" />
+                              </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <section class="faq">
+                <div class="faq__content">
+                    <h2 class="faq__content-title title">FAQ</h2>
+                    <div class="faq__body">
+                        <div class="faq__item">
+                            <div class="faq__question">TThe set time has passed, but the invoice has not yet arrived, what should I do?
+                                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.0423 3.36094C13.7418 2.85538 13.8732 1.91214 13.3357 1.25414C12.7982 0.596141 11.7954 0.472566 11.0959 0.978125L6.02938 4.63971C5.32984 5.14527 5.19846 6.08852 5.73594 6.74651C6.27342 7.40451 7.27622 7.52809 7.97576 7.02253L13.0423 3.36094Z" fill="#3A3A3C" />
+                                    <path d="M2.90217 0.982921C2.20195 0.478192 1.19932 0.602958 0.662721 1.26159C0.126125 1.92023 0.258768 2.86332 0.958987 3.36805L6.03042 7.02361C6.73064 7.52834 7.73328 7.40358 8.26987 6.74494C8.80647 6.08631 8.67383 5.14321 7.97361 4.63849L2.90217 0.982921Z" fill="#3A3A3C" />
+                                </svg>
+                            </div>
+                            <div class="faq__answer">
+                                Payment options we currently have: PayPal, Bitcoin.
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">Can I change my Netflix account email and password after purchase?
+                                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.0423 3.36094C13.7418 2.85538 13.8732 1.91214 13.3357 1.25414C12.7982 0.596141 11.7954 0.472566 11.0959 0.978125L6.02938 4.63971C5.32984 5.14527 5.19846 6.08852 5.73594 6.74651C6.27342 7.40451 7.27622 7.52809 7.97576 7.02253L13.0423 3.36094Z" fill="#3A3A3C" />
+                                    <path d="M2.90217 0.982921C2.20195 0.478192 1.19932 0.602958 0.662721 1.26159C0.126125 1.92023 0.258768 2.86332 0.958987 3.36805L6.03042 7.02361C6.73064 7.52834 7.73328 7.40358 8.26987 6.74494C8.80647 6.08631 8.67383 5.14321 7.97361 4.63849L2.90217 0.982921Z" fill="#3A3A3C" />
+                                </svg>
+                            </div>
+                            <div class="faq__answer">
+                                Payment options we currently have: PayPal, Bitcoin.
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">Can I add a phone number for password recovery?
+                                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.0423 3.36094C13.7418 2.85538 13.8732 1.91214 13.3357 1.25414C12.7982 0.596141 11.7954 0.472566 11.0959 0.978125L6.02938 4.63971C5.32984 5.14527 5.19846 6.08852 5.73594 6.74651C6.27342 7.40451 7.27622 7.52809 7.97576 7.02253L13.0423 3.36094Z" fill="#3A3A3C" />
+                                    <path d="M2.90217 0.982921C2.20195 0.478192 1.19932 0.602958 0.662721 1.26159C0.126125 1.92023 0.258768 2.86332 0.958987 3.36805L6.03042 7.02361C6.73064 7.52834 7.73328 7.40358 8.26987 6.74494C8.80647 6.08631 8.67383 5.14321 7.97361 4.63849L2.90217 0.982921Z" fill="#3A3A3C" />
+                                </svg>
+                            </div>
+                            <div class="faq__answer">
+                                Payment options we currently have: PayPal, Bitcoin.
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">How soon will I receive the account information I ordered?
+                                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.0423 3.36094C13.7418 2.85538 13.8732 1.91214 13.3357 1.25414C12.7982 0.596141 11.7954 0.472566 11.0959 0.978125L6.02938 4.63971C5.32984 5.14527 5.19846 6.08852 5.73594 6.74651C6.27342 7.40451 7.27622 7.52809 7.97576 7.02253L13.0423 3.36094Z" fill="#3A3A3C" />
+                                    <path d="M2.90217 0.982921C2.20195 0.478192 1.19932 0.602958 0.662721 1.26159C0.126125 1.92023 0.258768 2.86332 0.958987 3.36805L6.03042 7.02361C6.73064 7.52834 7.73328 7.40358 8.26987 6.74494C8.80647 6.08631 8.67383 5.14321 7.97361 4.63849L2.90217 0.982921Z" fill="#3A3A3C" />
+                                </svg>
+                            </div>
+                            <div class="faq__answer">
+                                Payment options we currently have: PayPal, Bitcoin.
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq__question">How to pay?
+                                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.0423 3.36094C13.7418 2.85538 13.8732 1.91214 13.3357 1.25414C12.7982 0.596141 11.7954 0.472566 11.0959 0.978125L6.02938 4.63971C5.32984 5.14527 5.19846 6.08852 5.73594 6.74651C6.27342 7.40451 7.27622 7.52809 7.97576 7.02253L13.0423 3.36094Z" fill="#3A3A3C" />
+                                    <path d="M2.90217 0.982921C2.20195 0.478192 1.19932 0.602958 0.662721 1.26159C0.126125 1.92023 0.258768 2.86332 0.958987 3.36805L6.03042 7.02361C6.73064 7.52834 7.73328 7.40358 8.26987 6.74494C8.80647 6.08631 8.67383 5.14321 7.97361 4.63849L2.90217 0.982921Z" fill="#3A3A3C" />
+                                </svg>
+                            </div>
+                            <div class="faq__answer">
+                                Payment options we currently have: PayPal, Bitcoin.
+                            </div>
+                        </div>
+                    </div> 
+                    <a href="#" class="faq__content-btn btn">Support</a>
+                </div>
+            </section>
+            
+        </div>
+    </section>
+   <footer class="footer">
+    <div class="footer__content container">
+        <div class="footer__content-info">
+            <a href="#" class="footer__info-logo">
+                <img src="images/logo.svg" alt="" class="footer__logo-img">
+                <span class="footer__logo-name">DiscountsOnServices</span>
+            </a>
+            <div class="footer__info-text">It's simple, fast and economical</div>
+        </div>
+        <div class="footer__content-menu">
+            <ul class="footer__menu-item">
+                <p class="footer__item-title">Subscriptions</p>
+                <li class="footer__item-list"><a href="#" class="footer__list-link">Netflix</a></li>
+                <li class="footer__item-list"><a href="#" class="footer__list-link">YouTube Premium</a></li>
+                <li class="footer__item-list"><a href="#" class="footer__list-link">Spotify</a></li>
+            </ul>
+            <ul class="footer__menu-item">
+                <p class="footer__item-title">Site navigation</p>
+                <li class="footer__item-list"><a href="#" class="footer__list-link">About</a></li>
+                <li class="footer__item-list"><a href="#" class="footer__list-link">FAQ</a></li>
+                <li class="footer__item-list"><a href="#" class="footer__list-link">Support</a></li>
+            </ul>
+        </div>
+        <div class="footer__content-navigation">
+            <div class="footer__navigation-social">
+                <a href="#" class="footer__social-link">
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.340185 33.6663L2.59352 25.3863C1.10875 22.8411 0.328678 19.9463 0.333518 16.9997C0.333518 7.79467 7.79519 0.333008 17.0002 0.333008C26.2052 0.333008 33.6669 7.79467 33.6669 16.9997C33.6669 26.2047 26.2052 33.6663 17.0002 33.6663C14.0548 33.6711 11.1613 32.8916 8.61685 31.408L0.340185 33.6663ZM10.9852 9.17967C10.77 9.19304 10.5596 9.24973 10.3669 9.34634C10.1861 9.44872 10.021 9.57672 9.87685 9.72634C9.67685 9.91467 9.56352 10.078 9.44185 10.2363C8.82587 11.038 8.49453 12.022 8.50019 13.033C8.50352 13.8497 8.71685 14.6447 9.05019 15.388C9.73185 16.8913 10.8535 18.483 12.3352 19.958C12.6919 20.313 13.0402 20.6697 13.4152 21.0013C15.2542 22.6204 17.4456 23.7881 19.8152 24.4113L20.7635 24.5563C21.0719 24.573 21.3802 24.5497 21.6902 24.5347C22.1756 24.5096 22.6495 24.3782 23.0785 24.1497C23.3552 24.003 23.4852 23.9297 23.7169 23.783C23.7169 23.783 23.7885 23.7363 23.9252 23.633C24.1502 23.4663 24.2885 23.348 24.4752 23.153C24.6135 23.0097 24.7335 22.8413 24.8252 22.6497C24.9552 22.378 25.0852 21.8597 25.1385 21.428C25.1785 21.098 25.1668 20.918 25.1618 20.8063C25.1552 20.628 25.0069 20.443 24.8452 20.3647L23.8752 19.9297C23.8752 19.9297 22.4252 19.298 21.5402 18.8947C21.4469 18.854 21.3469 18.8308 21.2452 18.8263C21.1312 18.8146 21.0159 18.8275 20.9073 18.864C20.7986 18.9005 20.699 18.9598 20.6152 19.038V19.0347C20.6069 19.0347 20.4952 19.1297 19.2902 20.5897C19.221 20.6826 19.1258 20.7528 19.0165 20.7914C18.9073 20.83 18.789 20.8352 18.6769 20.8063C18.5683 20.7773 18.4619 20.7405 18.3585 20.6963C18.1518 20.6097 18.0802 20.5763 17.9385 20.5147L17.9302 20.5113C16.9767 20.095 16.0939 19.5328 15.3135 18.8447C15.1035 18.6613 14.9085 18.4613 14.7085 18.268C14.0528 17.6401 13.4814 16.9297 13.0085 16.1547L12.9102 15.9963C12.8396 15.8899 12.7825 15.7752 12.7402 15.6547C12.6769 15.4097 12.8419 15.213 12.8419 15.213C12.8419 15.213 13.2469 14.7697 13.4352 14.5297C13.592 14.3302 13.7383 14.1227 13.8735 13.908C14.0702 13.5913 14.1319 13.2663 14.0285 13.0147C13.5619 11.8747 13.0785 10.7397 12.5819 9.61301C12.4835 9.38967 12.1919 9.22967 11.9269 9.19801C11.8369 9.18801 11.7469 9.17801 11.6569 9.17134C11.433 9.16022 11.2087 9.16245 10.9852 9.17801V9.17967Z" fill="white" />
+                    </svg>
+                </a>
+                <a href="#" class="footer__social-link">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_188_217)">
+                          <path d="M20.0002 36.6663C10.7952 36.6663 3.3335 29.2047 3.3335 19.9997C3.3335 10.7947 10.7952 3.33301 20.0002 3.33301C29.2052 3.33301 36.6668 10.7947 36.6668 19.9997C36.6668 29.2047 29.2052 36.6663 20.0002 36.6663ZM14.8168 21.9497L14.8385 21.938L16.2885 26.7213C16.4752 27.2397 16.7318 27.333 17.0435 27.2897C17.3568 27.248 17.5218 27.0797 17.7268 26.883L19.7068 24.9697L23.9568 28.1163C24.7335 28.5447 25.2918 28.323 25.4852 27.3963L28.2468 14.3597C28.5518 13.1463 28.0185 12.6597 27.0768 13.0463L10.8552 19.313C9.7485 19.7563 9.75516 20.3763 10.6552 20.6513L14.8168 21.9513V21.9497Z" fill="white" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_188_217">
+                            <rect width="40" height="40" fill="white" />
+                          </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+            <ul class="footer__navigation-translate">
+                <li class="footer__translate-item">
+                    <a href="#" class="footer__item-link">EN
+                        <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.99987 2.58633L6.47487 0.111328L7.18187 0.818328L3.99987 4.00033L0.817871 0.818328L1.52487 0.111328L3.99987 2.58633Z" fill="#333333" />
+                        </svg>
+                        <ul class="footer__link-list">
+                            <li class="footer__list-item"><a href="#" class="footer__item-link">English</a></li>
+                            <li class="footer__list-item"><a href="#" class="footer__item-link">Ukraine</a></li>
+                            <li class="footer__list-item"><a href="#" class="footer__item-link">Russian</a></li>
+                        </ul>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__prefooter container">
+        <a href="#" class="footer__prefooter-text">Privacy Policy</a>
+        <a href="#" class="footer__prefooter-text">Copyright 2021 © All Rights Reserved</a>
+        <a href="#" class="footer__prefooter-text">Developed by ....</a>
+    </div>
+   </footer>
+    
+   <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
